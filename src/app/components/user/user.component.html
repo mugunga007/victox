@@ -1,6 +1,7 @@
 
 <div class="container">
   <div class="row mt-2">
+    <button class="btn btn-lg btn-primary mb-3" disabled>Number of Users: {{users.length}}</button>
     <button 
     [disabled]="users.length >4"
     [ngClass]="add"
