@@ -1,0 +1,38 @@
+
+<div class="container">
+  <div class="row mt-2">
+    <button 
+    [disabled]="users.length >4"
+    [ngClass]="add"
+    (click)="addUsers()"
+     class="btn btn-block">Add User
+    </button>
+  </div>
+  <div class="row"  >
+   <div *ngIf="users.length >0;else noUsers"></div>
+ <div class="col-md-4 mt-2"  *ngFor="let u of users" >
+ <div class="card mt-2" >
+   <div class="card-body">
+     <div class="card-title">
+      <b>{{u.names}}</b> <button (click)="u.shown = !u.shown"
+      [ngClass]="u.shown ? 'btn btn-danger fa fa-minus' : 'btn btn-dark fa fa-plus'" 
+      class=" ml-2" 
+       
+       ></button>
+     </div>
+     <div class="card-text" *ngIf="u.shown">
+      <p [class.text-success]="u.age<=25" >Age: {{u.age}} <span class="badge badge-warning" *ngIf="u.age >25"> Way Old</span></p>
+     <p> Address: {{u.address.city}}, {{u.address.street}}</p>
+     </div>
+   </div>
+ </div>
+ </div>
+<ng-template #noUsers><h3 class="text-danger">No Users Found!</h3></ng-template>
+</div>
+ <div class="row">
+  <div class="alert alert-success mt-4">
+    <strong>Success!</strong> Indicates a successful or positive action.
+  </div>
+</div>
+ </div>
+

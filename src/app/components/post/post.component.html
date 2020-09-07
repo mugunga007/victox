@@ -1,0 +1,49 @@
+<app-post-form [currentPost]="(currentPost)" (newPost)='onNewPost($event)' 
+[isEdit]="isEdit"
+(editedPost)='onEditedPost($event)'
+></app-post-form>
+
+
+
+<div class="row mt-2">
+  
+  <div class="card bg-light col-md-4 mt-2" *ngFor="let p of posts">
+    <div class="card-body">
+      <div class="card-title">
+        Post no: {{p.userId}}, {{p.id}}
+      </div>
+      <div class="card-text">
+        <p ><b>
+          {{p.title}}
+        </b>
+      </p>
+     
+        <i>
+          {{p.body}}
+          
+        </i>
+      </div>
+      <hr>
+      <button class="btn btn-sm btn-danger float-right fa fa-window-close m-1" 
+      (click)="deletePost(p)"
+      ></button>
+      <button class="btn btn-sm btn-dark float-right fa fa-edit m-1"      
+     (click)="editPost(p)"
+     
+     >
+
+      </button>
+
+      <a class="btn btn-sm btn-success float-right text-white"
+      routerLink="/post/{{p.id}}"
+    
+      >
+        <span class="fa fa-book-open"></span>
+    </a>
+    </div>
+  </div>
+
+
+</div>
+
+

@@ -1,0 +1,31 @@
+
+<div class="row">
+
+  <form >
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input type="text" class="form-control" placeholder="Enter Title" id="title"
+      name="title" [(ngModel)]="currentPost.title"  #title>
+    </div>
+    <div class="form-group">
+      <label for="body">Body:</label>
+      <input type="text" class="form-control" placeholder="Enter Body" id="body"
+      name="body" [(ngModel)]="currentPost.body" #body>
+    </div>
+    
+    <input type="hidden" [(ngModel)]="currentPost.id" name="id" #id>
+
+    <button type="submit" class="btn btn-success fa fa-plus"
+    (click)="addPost(title.value, body.value)"
+   *ngIf="!isEdit"
+    > Add</button>
+    
+    <button type="submit"  class="btn btn-warning fa fa-edit"
+    (click)="updatePost(id.value,title.value, body.value)"
+   *ngIf="isEdit"
+    > Edit</button>
+
+  </form> 
+
+</div>
+

@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="card bg-light col-md-4 mt-2" >
+    <div class="card-body">
+      <button class="btn btn-sm btn-info fa fa-arrow-left" 
+      [routerLink]="['/post']"
+      >
+
+      </button>
+      <div class="card-title">
+        Post no: 
+      </div>
+      <div class="card-text">
+        <p ><b>
+          {{post.title}}
+        </b>
+      </p>
+     
+        <i>
+          {{post.body}}
+          
+        </i>
+      </div>
+      <hr>
+      <button class="btn btn-sm btn-danger float-right fa fa-window-close m-1" 
+
+      ></button>
+      <button class="btn btn-sm btn-dark float-right fa fa-edit m-1"      
+     
+     
+     >
+
+      </button>
+    </div>
+  </div>
+</div>

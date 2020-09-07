@@ -1,0 +1,18 @@
+
+
+<div class="row">
+
+  <form >
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input type="text" class="form-control" placeholder="Enter Title" id="title"
+      name="title" #title>
+    </div>
+   
+    <button type="submit" class="btn btn-success"
+    (click)="saveTodo(title.value)"
+    
+    > Submit</button>
+  </form> 
+
+</div>
